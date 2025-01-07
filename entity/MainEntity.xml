@@ -65,5 +65,4 @@
         <key-map field-name="productId" related="productId" />
         </relationship>
     </entity>
-
 </entities>

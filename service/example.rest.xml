@@ -1,0 +1,41 @@
+<resource
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-3.xsd"
+    name="parties"
+    displayName="Party API"
+    version="1.0.0"
+     require-authentication="anonymous-all"
+    description="Services for Party Management">
+    
+    <method type="post"><service name="example.MoquiCreateService.create#Party" /></method>
+    <id name="partyId">
+            <method type="get">
+                 <service name="example.MoquiGetService.get#Party" />
+            </method>
+            <method type="delete">
+                <service name="example.MoquiDeleteService.delete#Party" />
+            </method>
+            <method type="put">
+                <service name="example.MoquiUpdateService.store#Party" />
+            </method>
+            <method type="delete">
+                <service name="example.MoquiDeleteService.delete#Party" />
+            </method>
+        <resource name="contacts">
+            <method type="post"> 
+                <service name="example.AddContactService.create#ContactMech" />
+            </method>
+            <method type="get">
+                <service name="example.GetContactService.get#ContactMech" />
+            </method>
+        <id name="contactMechId">
+            <method type="put"> 
+                <service name="example.UpdateContactService.store#ContactMech" />
+            </method>
+            <method type="delete">
+                <service name="example.DeleteContactService.delete#ContactMech" />
+            </method>
+        </id>
+        </resource>
+    </id>
+</resource>

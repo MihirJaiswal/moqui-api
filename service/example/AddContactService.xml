@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+<!--Add Contact Mechanism -->
+
+<service verb="create" noun="ContactMech">
+<in-parameters>
+<parameter name="partyId" />
+<parameter name="contactMechId" />
+<parameter name="state" />
+<parameter name="city" />
+<parameter name="streetAddress" />
+<parameter name="postalCode" />
+
+</in-parameters>
+<out-parameters>
+<parameter name="contactdata"></parameter>
+</out-parameters>
+
+<actions>
+<entity-make-value entity-name="moqui.example.ContactMech" value-field="contactdata" />
+<set field="contactdata.partyId" from="context.partyId" />
+<set field="contactdata.contactMechId" from="context.contactMechId" />
+<set field="contactdata.state" from="context.state" />
+<set field="contactdata.city" from="context.city"/>
+<set field="contactdata.streetAddress" from="context.streetAddress"/>
+<set field="contactdata.postalCode" from="context.postalCode" />
+<entity-create value-field="contactdata" />
+
+</actions>
+</service>
+</services>
