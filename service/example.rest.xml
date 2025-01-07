@@ -1,11 +1,10 @@
-<resource
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-3.xsd"
-    name="parties"
-    displayName="Party API"
-    version="1.0.0"
-     require-authentication="anonymous-all"
-    description="Services for Party Management">
+    name="task"
+    displayName="Task API"
+    require-authentication="anonymous-all"
+    version="1.0.0">
+<resource name="parties">
     
     <method type="post"><service name="example.MoquiCreateService.create#Party" /></method>
     <id name="partyId">
@@ -38,4 +37,19 @@
         </id>
         </resource>
     </id>
+        </resource>
+                <resource name="products">
+                <method type="post"><service name="example.ProductCreateService.create#Product" /></method>
+                <id name="productId">
+                <method type="get">
+                        <service name="example.ProdcutGetService.get#Product" />
+                </method>
+                <method type="put">
+                  <service name="example.ProductUpdateService.store#Product" />
+                </method>
+                <method type="delete">
+                 <service name="example.ProductDeleteService.delete#Product" />
+                </method>
+        </id>
+</resource>
 </resource>
