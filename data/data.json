@@ -1,12 +1,17 @@
 {
     "party": [
+        {
+            "_dataType": "demo"
+        },
       {
+        "_entity": "moqui.example.Party",
         "party_id": 44,
         "party_type": "Customer",
         "first_name": "John",
         "last_name": "Doe"
       },
       {
+        "_entity": "moqui.example.Party",
         "party_id": 45,
         "party_type": "Customer",
         "first_name": "Jane",
@@ -14,7 +19,11 @@
       }
     ],
     "contact_mech": [
+        {
+            "_dataType": "demo"
+          },
       {
+        "_entity": "moqui.example.ContactMech",
         "contact_mech_id": 1,
         "party_id": 1,
         "street_address": "1600 Amphitheatre Parkway",
@@ -23,6 +32,7 @@
         "postal_code": "94043"
       },
       {
+        "_entity": "moqui.example.ContactMech",
         "contact_mech_id": 2,
         "party_id": 2,
         "street_address": "350 Fifth Avenue",
@@ -31,26 +41,33 @@
         "postal_code": "10118"
       }
     ],
-    "Product": [
+    "product": [
+        {
+            "_dataType": "demo"
+          },
       {
+        "_entity": "moqui.example.Product",
         "product_id": 55,
         "product_name": "T-Shirt",
         "color": "Red",
         "size": "M"
       },
       {
+        "_entity": "moqui.example.Product",
         "product_id": 56,
         "product_name": "Jeans",
         "color": "Blue",
         "size": "32"
       },
       {
+        "_entity": "moqui.example.Product",
         "product_id": 57,
         "product_name": "Jacket",
         "color": "White",
         "size": "L"
       },
       {
+        "_entity": "moqui.example.Product",
         "product_id": 58,
         "product_name": "Sneakers",
         "color": "Black",
@@ -58,3 +75,4 @@
       }
     ]
   }
+  

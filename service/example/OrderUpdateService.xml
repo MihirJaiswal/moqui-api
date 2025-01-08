@@ -24,7 +24,7 @@
             </entity-find-one>
 
             <if condition="context.orderDate != '' || context.billingMechId != '' || context.shippingMechId != ''">
-                <log message="Debug: Updating OrderHeader fields for orderId: ${context.orderId}" />
+                <log message="Debug: Updating OrderHeader fields for orderId: ${context.orderId}"  />
                 <set field="orderlist.orderDate" from="context.orderDate" />
                 <set field="orderlist.billingContactMechId" from="context.billingMechId" />
                 <set field="orderlist.shippingContactMechId" from="context.shippingMechId" />
