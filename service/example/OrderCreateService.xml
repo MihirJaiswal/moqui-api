@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+<!--Add Contact Mechanism -->
+
+<service verb="create" noun="Order">
+  <in-parameters>
+            <parameter name="orderDate" required="true" type="Date"></parameter>
+            <parameter name="quantity" required="true"></parameter>
+            <parameter name="status" required="true"></parameter>
+            <parameter name="party_id" required="true"></parameter>
+            <parameter name="shippingContactMech_id" required="true"></parameter>
+            <parameter name="billingMech_id" required="true"></parameter>
+            <parameter name="productId" required="true"></parameter>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="orderlist"></parameter>
+            <parameter name="itemlist"></parameter>
+        </out-parameters>
+
+<actions>
+<entity-make-value entity-name="moqui.example.OrderHeader" value-field="orderlist" />
+            <set field="orderlist.orderDate" from="context.orderDate" />
+            <set field="orderlist.partyId" from="context.party_id" />
+            <set field="orderlist.billingContactMechId" from="context.billingMech_id" />
+            <set field="orderlist.shippingContactMechId" from="context.ShippingMech_id" />
+            <entity-sequenced-id-primary value-field="orderlist" />
+            <entity-create value-field="orderlist" />
+
+            <entity-make-value entity-name="moqui.example.OrderItem" value-field="itemlist" />
+            <entity-sequenced-id-primary value-field="itemlist" />
+            <set field="itemlist.orderId" from="orderlist.orderId" />
+            <set field="itemlist.productId" from="context.product_id" />
+            <set field="itemlist.quantity" from="context.quantity" />
+            <set field="itemlist.status" from="context.status" />
+            <entity-create value-field="itemlist" />
+</actions>
+</service>
+</services>

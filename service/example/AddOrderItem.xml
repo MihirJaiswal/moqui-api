@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+  <service verb="add" noun="Order">
+    <in-parameters>
+    <parameter name="orderId" required="true" />
+    <parameter name="productId" required="true" />
+    <parameter name="quantity" required="true" />
+    <parameter name="status" required="true" />
+    </in-parameters>
+    <out-parameters>
+    <parameter name="productlist" />
+    </out-parameters>
+<actions>
+<entity-make-value entity-name="moqui.example.OrderItem" value-field="productlist" />
+
+ <entity-sequenced-id-primary value-field="productlist"/>
+ <set field="productlist.orderId" from="context.orderId" />
+ <set field="productlist.productId" from="context.productId" />
+ <set field="productlist.quantity" from="context.quantity" />
+ <set field="productlist.status" from="context.status" />
+ <entity-create value-field="productlist" />
+ </actions>
+</service>
+
+</services>
