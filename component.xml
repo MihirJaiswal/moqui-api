@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="moqui-api" version="1.0.0" location="moqui-training" ></component>
+<component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="moqui-training" version="1.0.0" location="moqui-training" ></component>
