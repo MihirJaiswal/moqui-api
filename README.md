@@ -1,3 +1,16 @@
+# Hotwax Technical Assignment
+
+This repository contains two branches:
+
+- `task-1`: This branch contains the implementation for the first task.
+- `main`: This branch contains the second task where I developed RESTful APIs.
+
+
+
+Developed by: **Mihir Jaiswal**
+
+# Below are the screenshots of the API testing and results, which were run in Postman.
+
 # Parties
 
 ![party](https://github.com/user-attachments/assets/3cc764d0-2112-4a0c-bcfa-4517121a91b6)
