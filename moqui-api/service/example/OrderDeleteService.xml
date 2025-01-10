@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+  <service verb="delete" noun="Order">
+        <in-parameters>
+            <parameter name="orderId" />
+        </in-parameters>
+
+        <out-parameters>
+            <parameter name="orderId" />
+        </out-parameters>
+
+        <actions>
+            <entity-find-one entity-name="moqui.example.OrderHeader" value-field="filterlist">
+                <field-map field-name="orderId" from="orderId" />
+            </entity-find-one>
+            <entity-delete-related value-field="filterlist" relationship-name="OrderItem" />
+            <entity-delete value-field="filterlist" />
+        </actions>
+    </service>
+    </services>

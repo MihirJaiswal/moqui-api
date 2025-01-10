@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+<service verb="store" noun="ContactMech">
+<in-parameters>
+<parameter name="partyId" />
+<parameter name="contactMechId" />
+<parameter name="streetAddress" />
+<parameter name="city" />
+<parameter name="state" />
+<parameter name="postalCode" />
+</in-parameters>
+
+<out-parameters>
+<parameter name="datalist" />
+</out-parameters>
+
+<actions>
+<entity-find-one entity-name="moqui.example.ContactMech" value-field="datalist">
+<field-map field-name="partyId" from="context.partyId"/>
+<field-map field-name="contactMechId" from="contactMechId"/>
+</entity-find-one>
+
+<if condition="datalist != null">
+<set field="datalist.state" from="context.state" />
+<set field="datalist.city" from="context.city" />
+<set field="datalist.streetAddress" from="context.streetAddress" />
+<set field="datalist.postalCode" from="context.postalCode"/>
+<entity-update value-field="datalist" />
+
+
+</if>
+
+</actions>
+
+</service>
+</services>
