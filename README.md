@@ -1,4 +1,7 @@
 # Parties
+
+![party](https://github.com/user-attachments/assets/3cc764d0-2112-4a0c-bcfa-4517121a91b6)
+
 <h3>Create a Party: POST /parties </h3>
 
 ![partypost](https://github.com/user-attachments/assets/c0b1bea6-2068-4b7a-b142-db639e2c02b4)
@@ -35,6 +38,9 @@
 
 # Develop RESTful APIs for Product Data
 
+![products](https://github.com/user-attachments/assets/08f2fbf8-6285-48fc-b234-f359ab49c7c4)
+
+
 <h3> Create a Product: POST /products  </h3>
 
 ![productPost](https://github.com/user-attachments/assets/09b3b0c7-de53-41a8-9908-3982f300dbc6)
@@ -52,6 +58,9 @@
 ![productDelete](https://github.com/user-attachments/assets/6fd7bb62-8cc7-437d-9a4d-8b255865bdbe)
 
 # Develop RESTful APIs for Order Data
+
+![orders](https://github.com/user-attachments/assets/5fb02988-c793-4d03-863e-664c27f8ff1a)
+
 
 <h3> Create an Order: POST /orders  </h3>
 
