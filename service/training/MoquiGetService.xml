@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
-<service verb="get" noun="Party">
+<!-- // service for fetch the data --> 
+<service verb="get" noun="MoquiTraining">
 
 <in-parameters>
-<parameter name="partyId" required="true"/>
+<parameter name="trainingId" required="true"/>
+<parameter name="trainingName"/>
 </in-parameters>
 <out-parameters>
-<parameter  name="partyList" required="true"/>
+<parameter  name="trainingList" required="true"/>
+
 </out-parameters>
 <actions>
 
-<entity-find entity-name="moqui.example.Party" list="partyList">
+<entity-find entity-name="moqui.training.MoquiTraining" list="trainingList">
 
 <econdition  field-name="partyId" ignore-if-empty="true"/>
 <select-field field-name="firstName"/>
 <select-field field-name="lastName"/>
 <select-field field-name="PartyType" />
-<select-field field-name="partyId"/>
+<select-field field-name="trainingId"/>
 </entity-find>
 </actions>
 </service>
-
-</services>
+</services> 
