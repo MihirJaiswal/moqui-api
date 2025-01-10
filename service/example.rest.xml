@@ -27,6 +27,7 @@
             <method type="get">
                 <service name="example.GetContactService.get#ContactMech" />
             </method>
+            
         <id name="contactMechId">
             <method type="put"> 
                 <service name="example.UpdateContactService.store#ContactMech" />
