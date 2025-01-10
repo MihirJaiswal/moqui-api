@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+<service verb="get" noun="ContactMech">
+
+<in-parameters>
+<parameter name="partyId" required="true"/>
+</in-parameters>
+<out-parameters>
+<parameter  name="contactList" required="true"/>
+</out-parameters>
+<actions>
+
+<entity-find entity-name="moqui.example.ContactMech" list="contactList">
+
+<econdition  field-name="partyId" ignore-if-empty="true"/>
+<select-field field-name="contactMechId"/>
+<select-field field-name="partyId"/>
+<select-field field-name="streetAddress" />
+<select-field field-name="city"/>
+<select-field field-name="state"/>
+<select-field field-name="postalCode"/>
+</entity-find>
+</actions>
+</service>
+</services>

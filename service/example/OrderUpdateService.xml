@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service verb="store" noun="Order">
+        <in-parameters>
+            <parameter name="orderId" />
+            <parameter name="orderDate" type="Date" />
+            <parameter name="quantity" />
+            <parameter name="status" />
+            <parameter name="partyId" />
+            <parameter name="shippingMechId" />
+            <parameter name="billingMechId" />
+            <parameter name="productId" />
+        </in-parameters>
+        <out-parameters>
+            <parameter name="orderlist" />
+            <parameter name="itemlist" />
+        </out-parameters>
+
+        <actions>
+            <log message="Debug: Context received: ${context}" />
+
+            <entity-find-one entity-name="moqui.example.OrderHeader" value-field="orderlist">
+                <field-map field-name="orderId" from="context.orderId" />
+            </entity-find-one>
+
+            <if condition="context.orderDate != '' || context.billingMechId != '' || context.shippingMechId != ''">
+                <log message="Debug: Updating OrderHeader fields for orderId: ${context.orderId}"  />
+                <set field="orderlist.orderDate" from="context.orderDate" />
+                <set field="orderlist.billingContactMechId" from="context.billingMechId" />
+                <set field="orderlist.shippingContactMechId" from="context.shippingMechId" />
+            </if>
+
+            <entity-update value-field="orderlist" />
+
+            <entity-find-one entity-name="moqui.example.OrderItem" value-field="itemlist">
+                <field-map field-name="orderId" from="context.orderId" />
+                <field-map field-name="productId" from="context.productId" />
+            </entity-find-one>
+
+            <if condition="context.quantity != '' || context.status != ''">
+                <log message="Debug: Updating OrderItem fields for orderId: ${context.orderId} and productId: ${context.productId}" />
+                <set field="itemlist.quantity" from="context.quantity" />
+                <set field="itemlist.status" from="context.status" />
+            </if>
+
+            <entity-update value-field="itemlist" />
+        </actions>
+    </service>
+</services>
